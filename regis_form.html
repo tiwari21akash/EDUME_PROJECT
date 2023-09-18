@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Paid Course</title>
+    <meta name="viewport" content="width=device-width,
+      initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/regis_form.css" />
+    <!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+ <style>
+ .container{
+  margin: 300;
+ }
+ </style>
+
+  </head>
+  <body src="">
+    <div class="container">
+      <h1 class="form-title">Registration</h1>
+      <form method="POST" action="regis_form.php" onsubmit="return validate()" >
+        <div class="main-user-info">
+          <div class="user-input-box">
+            <label for="fullName">Full Name</label>
+            <input type="text"
+                    id="fullName"
+                    name="fullName"
+                    placeholder="Enter Full Name" required>
+          </div>
+          <div class="user-input-box">
+            <label for="username">Username</label>
+            <input type="text"
+                    id="userName"
+                    name="username"
+                    placeholder="Enter Username" required>
+          </div>
+          <div class="user-input-box">
+            <label for="email">Email</label>
+            <input type="email"
+                    id="Email"
+                    name="email"
+                    placeholder="Enter Email" required>
+          </div>
+          <div class="user-input-box">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="number"
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    placeholder="Enter Phone Number" required>
+          </div>          
+          <div class="user-input-box">
+            <label >Pay:eduMe301@okhdfcback</label>
+            <label >Tranastion ID</label>
+            <input type="text"
+                    id="traction_id"
+                    name="traction_id"
+                    placeholder="Enter Tranastion ID" required>
+          <div class="user-input-box">
+            <label >UPI ID</label>
+            <input type="email"
+                    id="upi_id"
+                    name="upi_id"
+                    placeholder="Enter UPI ID"required>
+          </div>
+           
+        </div>
+        <div class="gender-details-box">
+          <span class="gender-title">Courses</span>
+          <div class="gender-category">
+            <input type="radio" name="course" value="C" id="C">
+            <label for="C">C</label><label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 2000 INR</label>
+            <br>
+            <input type="radio" name="course" value="Java" id="Java">
+            <label for="Java">Java</label><label>&nbsp&nbsp&nbsp&nbsp 3000 INR</label>
+            <br>
+            <input type="radio" name="course" value="Pyhton" id="Python">
+            <label for="Pyhton">Python</label><label >&nbsp4000 INR</label>
+          </div>
+          <span id="per"></span>
+        <div class="form-submit-btn">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    </div>
+
+
+    <script type="text/javascript">
+	
+      function validate() {
+        var username=document.getElementById('userName').value;
+        var fullName=document.getElementById('fullName').value;
+        var mail=document.getElementById('Email').value;
+        var phoneNumber=document.getElementById('phoneNumber').value;
+        var traction_id=document.getElementById('traction_id').value;
+        var upi_id=document.getElementById('upi_id').value;
+        
+
+        if ((username=="") ||( fullName=="")|| (mail=="")||(phoneNumber=="")||(traction_id=="")||(upi_id==""))
+         {
+           document.getElementById('per').innerHTML="please fill the details";
+           return false;
+         }
+         if(phoneNumber.toString().length <10){
+          document.getElementById('per').innerHTML="Please Enter Valid mobile number";
+           return false;
+         }
+         else{
+          alert("You are registered");
+         }
+      }
+      </script>
+  </body>
+</html>
